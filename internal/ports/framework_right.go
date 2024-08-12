@@ -2,5 +2,5 @@ package ports
 
 type DbPort interface {
 	CloseDbConnection()
-	AddToHistory(answer int, operation string) error
+	AddToHistory(answer int32, operation string) error
 }

@@ -1,6 +1,6 @@
 package api
 
-import "github.com/Odvin/go-hex-boilerplate/internal/ports"
+import "github.com/Odvin/go-hex-boilerplate/int32ernal/ports"
 
 type Adapter struct {
 	db    ports.DbPort
@@ -11,7 +11,7 @@ func NewAdapter(db ports.DbPort, arith ports.ArithmaticPort) *Adapter {
 	return &Adapter{db: db, arith: arith}
 }
 
-func (apia Adapter) GetAddition(a, b int) (int, error) {
+func (apia Adapter) GetAddition(a, b int32) (int32, error) {
 	res, err := apia.arith.Addition(a, b)
 	if err != nil {
 		return 0, err
@@ -25,7 +25,7 @@ func (apia Adapter) GetAddition(a, b int) (int, error) {
 	return res, nil
 }
 
-func (apia Adapter) GetSubtraction(a, b int) (int, error) {
+func (apia Adapter) GetSubtraction(a, b int32) (int32, error) {
 	res, err := apia.arith.Subtraction(a, b)
 	if err != nil {
 		return 0, err
@@ -39,7 +39,7 @@ func (apia Adapter) GetSubtraction(a, b int) (int, error) {
 	return res, nil
 }
 
-func (apia Adapter) GetMultiplication(a, b int) (int, error) {
+func (apia Adapter) GetMultiplication(a, b int32) (int32, error) {
 	res, err := apia.arith.Multiplication(a, b)
 	if err != nil {
 		return 0, err
@@ -53,7 +53,7 @@ func (apia Adapter) GetMultiplication(a, b int) (int, error) {
 	return res, nil
 }
 
-func (apia Adapter) GetDivision(a, b int) (int, error) {
+func (apia Adapter) GetDivision(a, b int32) (int32, error) {
 	res, err := apia.arith.Division(a, b)
 	if err != nil {
 		return 0, err

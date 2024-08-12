@@ -1,8 +1,8 @@
 package ports
 
 type APIPort interface {
-	GetAddition(a, b int) (int, error)
-	GetSubtraction(a, b int) (int, error)
-	GetMultiplication(a, b int) (int, error)
-	GetDivision(a, b int) (int, error)
+	GetAddition(a, b int32) (int32, error)
+	GetSubtraction(a, b int32) (int32, error)
+	GetMultiplication(a, b int32) (int32, error)
+	GetDivision(a, b int32) (int32, error)
 }
