@@ -1,6 +1,6 @@
 package api
 
-import "github.com/Odvin/go-hex-boilerplate/int32ernal/ports"
+import "github.com/Odvin/go-hex-boilerplate/internal/ports"
 
 type Adapter struct {
 	db    ports.DbPort
