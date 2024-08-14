@@ -1,0 +1,23 @@
+services:
+  mysql-db:
+    container_name: mysql-hex-db
+    image: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: superUserPass
+      MYSQL_DATABASE: hex_test
+      MYSQL_USER: hexUser
+      MYSQL_PASSWORD: hexUserPass
+    volumes:
+      - ./testdb:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    networks:
+      - hex-boilerplate
+
+networks:
+  hex-boilerplate:
+    name: hex-network
+    driver: bridge
